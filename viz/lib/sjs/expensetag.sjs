@@ -5,7 +5,7 @@
 # License   : BSD License
 # -----------------------------------------------------------------------------
 # Creation  : 07-Dec-2008
-# Last mod  : 06-Apr-2009
+# Last mod  : 14-Jun-2009
 # -----------------------------------------------------------------------------
 
 @module expensetag
@@ -18,7 +18,7 @@
 # FIXME: Resize visualization canvas when window is resized
 # FIXME: Refactor page interactions
 
-@shared MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dev"]
+@shared MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 @function clone value
 | Clones the given value
