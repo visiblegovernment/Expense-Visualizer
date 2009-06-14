@@ -1,0 +1,1565 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>VisibleGovernment | Expenses R1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="Stylesheet" type="text/css" href="lib/css/reset.css" />
+    <link rel="Stylesheet" type="text/css" href="lib/css/base.css" />
+    <link rel="Stylesheet" type="text/css" href="lib/css/theme/jquery-ui-1.7.1.custom.css" />
+    <link rel="Stylesheet" type="text/css" href="lib/css/shadows.css" />
+    <link rel="Stylesheet" type="text/css" href="lib/css/wallpaper.css" />
+    <link rel="Stylesheet" type="text/css" href="lib/css/visiblegovernment.css" />
+    <script language="javascript" type="text/javascript" src="lib/js/jquery-1.3.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/jquery-ui-1.7.1.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/jquery.qtip-1.0.0-beta3.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/jquery.json-1.3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/sprintf.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/html-1.1.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/shadows.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/extend-2.2.3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/channels-0.8.2.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/placement.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/wallpaper.js"></script>
+    <script language="javascript" type="text/javascript" src="data/expenses-by_dep.json"></script>
+    <script language="javascript" type="text/javascript" src="data/positions.json"></script>
+    <script language="javascript" type="text/javascript" src="data/departments.json"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/expensetag.js"></script>
+  </head>
+  <body>
+    <div id="MainArea" class="area">
+      <div class="header">
+        <div class="title">
+          <h1>VisibleGovernment<span class="hi">.ca</span></h1>
+          <h2>Canadian Federal Government Travel and Hospitality Expenses</h2>
+        </div>
+      </div>
+      <div class="body">
+        <div class="Info section w-applet hidden">
+          <div class="w-cards">
+            <div class="header">
+              <div class="w-tabs">
+                <ul>
+                  <li>
+                    <span card="1" class="do-selectCard current">
+                      About
+                    </span>
+                  </li>
+                  <li>
+                    <span card="2" class="do-selectCard">
+                      Options
+                    </span>
+                  </li>
+                </ul>
+                <div class="clearer">
+                  &nbsp;
+                </div>
+              </div>
+            </div>
+            <div class="body">
+              <div class="about w-card current N1">
+                <div class="header">
+                  About this visualization
+                </div>
+                <div class="body">
+                  HELLO
+                </div>
+                <div class="footer">
+                  <input type="button" value="Options" class="do-nextCard" />
+                </div>
+              </div>
+              <div class="options w-card N2">
+                <div class="header">
+                  Visualization configuration
+                </div>
+                <div class="body">
+                  HELLO
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="Parameters section w-applet hidden">
+          <div class="compacted hidden">
+            <input type="button" value="Show options »" class="do-showOptions" />
+          </div>
+          <div class="expanded">
+            <div class="hidden">
+              <input type="button" value="Hide options »" class="do-hideOptions" />
+            </div>
+            <div class="span-66p">
+              <div class="header hidden">
+                <h3 class="title">Show expenses for</h3>
+              </div>
+              <div class="body w-form-h">
+                <div class="dataset w-field group">
+                  <label>
+                    Displayed data
+                  </label>
+                  <div class="value w-choices">
+                    <ul>
+                      <li class="hospitality current">
+                        Hospitality Expenses
+                      </li>
+                      <li class="travel current">
+                        Travel Expenses
+                      </li>
+                      <li class="empty" />
+                    </ul>
+                    <div class="clearer">
+                      &nbsp;
+                    </div>
+                  </div>
+                </div>
+                <div class="find group w-field">
+                  <label>
+                    For departements
+                  </label>
+                  <span class="DepartmentSelector Selector filter value w-applet">
+                    <span class="w-clickdetails">
+                      <span class="departments summary">
+                        <label>
+                          department:
+                        </label>
+                        <span class="do-showDetails value">
+                          All
+                        </span>
+                      </span>
+                      <div class="details">
+                        <div class="header">
+                          <h3>Filter by department</h3>
+                        </div>
+                        <div class="body">
+                          <div class="filter">
+                            <div class="w-choices left">
+                              Select
+                              <ul class="as-inline">
+                                <li class="do-selectAll">
+                                  All
+                                </li>
+                                <li class="do-selectNone">
+                                  None
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="right">
+                              <input type="button" value="OK" class="do-ok do-hideDetails" />
+                              <span class="hset-5">
+                                
+                              </span>
+                              <input type="button" value="Cancel" class="do-hideDetails" />
+                            </div>
+                            <div class="clearer">
+                              &nbsp;
+                            </div>
+                          </div>
+                          <div class="departments choices">
+                            <div class="span-50p">
+                              <ul>
+                                <li class="template hidden">
+                                  <input type="checkbox" value="0" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    <span class="out">Ambassador</span>
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="span-50p">
+                              <ul>
+                                <li class="template hidden">
+                                  <input type="checkbox" value="0" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    <span class="out">Ambassador</span>
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="clear">
+                            &nbsp;
+                          </div>
+                          <div class="operations hidden">
+                            <input type="button" value="OK" class="do-ok do-hideDetails" />
+                            <span class="hset-5">
+                              
+                            </span>
+                            <input type="button" value="Cancel" class="do-hideDetails" />
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </span>
+                </div>
+                <div class="positions group w-field">
+                  <label>
+                    For positions
+                  </label>
+                  <span class="PositionSelector Selector filter value w-applet">
+                    <span class="w-clickdetails">
+                      <span class="position summary">
+                        <label>
+                          positions:
+                        </label>
+                        <span class="do-showDetails value">
+                          All
+                        </span>
+                      </span>
+                      <div class="details">
+                        <div class="header">
+                          <h3>Filter by position</h3>
+                        </div>
+                        <div class="body">
+                          <div class="filter">
+                            <div class="w-choices left">
+                              Select
+                              <ul class="as-inline">
+                                <li class="do-selectAll">
+                                  All
+                                </li>
+                                <li class="do-selectNone">
+                                  None
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="right">
+                              <input type="button" value="OK" class="do-ok do-hideDetails" />
+                              <span class="hset-5">
+                                
+                              </span>
+                              <input type="button" value="Cancel" class="do-hideDetails" />
+                            </div>
+                            <div class="clearer">
+                              &nbsp;
+                            </div>
+                          </div>
+                          <div class="positions choices">
+                            <div class="span-50p">
+                              <ul>
+                                <li>
+                                  <input type="checkbox" value="0" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Ambassador
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="1" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Assistant Commissioner
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="2" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Assistant Deputy Minister
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="3" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Associate Deputy Minister
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="4" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Board Member
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="5" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Chair
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="6" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Chief Financial Officer
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="7" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Chief Information Officer
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="8" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Chief of Staff
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="9" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Chief Operations Officer
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="10" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Commisioner
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="11" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Deputy Minister
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="12" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Director
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="span-50p">
+                              <ul>
+                                <li>
+                                  <input type="checkbox" value="13" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Director of Communications
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="14" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    General/Executive Director
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="15" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Legal Counsel
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="16" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Minister
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="17" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    MP
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="18" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Parliamentary Secretary
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="19" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    President/Chief Executive Officer
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="21" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Press Secretary
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="22" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Regional Director
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="23" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Special Assistant
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="24" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Vice President
+                                  </span>
+                                </li>
+                                <li>
+                                  <input type="checkbox" value="25" />
+                                  <span class="hsep-5">
+                                    
+                                  </span>
+                                  <span class="name">
+                                    Other
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="clear">
+                            &nbsp;
+                          </div>
+                          <div class="operations hidden">
+                            <input type="button" value="OK" class="do-ok do-hideDetails" />
+                            <span class="hset-5">
+                              
+                            </span>
+                            <input type="button" value="Cancel" class="do-hideDetails" />
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </span>
+                </div>
+                <div class="period group w-field">
+                  <label>
+                    For Period
+                  </label>
+                  <div class="PeriodSelector Selector value w-clickdetails w-applet">
+                    <span class="startDate">
+                      <input type="input" value="1/2003" style="width:60px;text-align:center;" class="do-showDetails value" />
+                    </span>
+                    <span>
+                      &rarr;
+                    </span>
+                    <span class="endDate">
+                      <input type="input" value="12/2008" style="width:60px;text-align:center;" class="do-showDetails value" />
+                    </span>
+                    <input type="button" value="Set" class="do-showDetails" />
+                    <div class="chooser details">
+                      <div class="header">
+                        <div class="left">
+                          <h3>Select period for data</h3>
+                        </div>
+                        <div class="right">
+                          <input type="button" value="Set date" class="do-save do-hideDetails" /><span> or </span>
+                          <input type="button" value="Cancel" class="do-cancel do-hideDetails" />
+                        </div>
+                        <div class="vsep-5 clear">
+                          &nbsp;
+                        </div>
+                      </div>
+                      <div class="body">
+                        <div class="startDate w-time span-50p">
+                          <div class="decoration">
+                            <div class="shadow-mr">
+                              &nbsp;
+                            </div>
+                            <div class="shadow-lr">
+                              &nbsp;
+                            </div>
+                            <div class="shadow-lm">
+                              &nbsp;
+                            </div>
+                          </div>
+                          <div class="body">
+                            <div class="year w-choices">
+                              <div>
+                                Select the start year:
+                              </div>
+                              <ul class="values clear">
+                                <li class="current">
+                                  2003
+                                </li>
+                                <li>
+                                  2004
+                                </li>
+                                <li>
+                                  2005
+                                </li>
+                                <li>
+                                  2006
+                                </li>
+                                <li>
+                                  2007
+                                </li>
+                                <li>
+                                  2008
+                                </li>
+                              </ul>
+                              <div class="clearer">
+                                &nbsp;
+                              </div>
+                            </div>
+                            <div class="vsep-5">
+                              &nbsp;
+                            </div>
+                            <div class="month w-choices">
+                              <div>
+                                
+Select the start month:
+                              </div>
+                              <ul class="values clear">
+                                <li value="0" class="current">
+                                  Jan
+                                </li>
+                                <li value="1">
+                                  Feb
+                                </li>
+                                <li value="2">
+                                  Mar
+                                </li>
+                                <li value="3">
+                                  Apr
+                                </li>
+                                <li value="4">
+                                  May
+                                </li>
+                                <li value="5">
+                                  Jun
+                                </li>
+                                <li value="6">
+                                  Jul
+                                </li>
+                                <li value="7">
+                                  Aug
+                                </li>
+                                <li value="8">
+                                  Sep
+                                </li>
+                                <li value="9">
+                                  Oct
+                                </li>
+                                <li value="10">
+                                  Nov
+                                </li>
+                                <li value="11">
+                                  Dec
+                                </li>
+                              </ul>
+                              <div class="clearer">
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="endDate w-time span-50p">
+                          <div class="decoration">
+                            <div class="shadow-mr">
+                              &nbsp;
+                            </div>
+                            <div class="shadow-lr">
+                              &nbsp;
+                            </div>
+                            <div class="shadow-lm">
+                              &nbsp;
+                            </div>
+                          </div>
+                          <div class="body">
+                            <div class="year w-choices">
+                              <div>
+                                Select the end year:
+                              </div>
+                              <ul class="values clear">
+                                <li>
+                                  2003
+                                </li>
+                                <li>
+                                  2004
+                                </li>
+                                <li>
+                                  2005
+                                </li>
+                                <li>
+                                  2006
+                                </li>
+                                <li>
+                                  2007
+                                </li>
+                                <li class="current">
+                                  2008
+                                </li>
+                              </ul>
+                              <div class="clearer">
+                                &nbsp;
+                              </div>
+                            </div>
+                            <div class="vsep-5">
+                              &nbsp;
+                            </div>
+                            <div class="month w-choices">
+                              <div>
+                                
+Select the end month:
+                              </div>
+                              <ul class="values clear">
+                                <li value="0">
+                                  Jan
+                                </li>
+                                <li value="1">
+                                  Feb
+                                </li>
+                                <li value="2">
+                                  Mar
+                                </li>
+                                <li value="3">
+                                  Apr
+                                </li>
+                                <li value="4">
+                                  May
+                                </li>
+                                <li value="5">
+                                  Jun
+                                </li>
+                                <li value="6">
+                                  Jul
+                                </li>
+                                <li value="7">
+                                  Aug
+                                </li>
+                                <li value="8">
+                                  Sep
+                                </li>
+                                <li value="9">
+                                  Oct
+                                </li>
+                                <li value="10">
+                                  Nov
+                                </li>
+                                <li value="11" class="current">
+                                  Dec
+                                </li>
+                              </ul>
+                              <div class="clearer">
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="clearer">
+                          &nbsp;
+                        </div>
+                        <div class="operations clear">
+                          <div class="body">
+                            <input type="button" value="Set date" class="do-save do-hideDetails" /><span> or </span>
+                            <a href="#cancel" class="action do-cancel do-hideDetails">
+                              cancel
+                            </a>
+                          </div>
+                        </div>
+                        <div class="clearer">
+                          &nbsp;
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clearer">
+                      &nbsp;
+                    </div>
+                  </div>
+                </div>
+                <div class="separator group">
+                  &nbsp;
+                </div>
+              </div>
+            </div>
+            <div class="span-33p">
+              <div class="body w-form-h">
+                <div class="modes w-field">
+                  <label>
+                    Display mode
+                  </label>
+                  <div class="value w-choices">
+                    <ul class="mode-1">
+                      <li class="cumulative current">
+                        Cumulative
+                      </li>
+                      <li class="month">
+                        Per month
+                      </li>
+                      <li class="empty" />
+                    </ul>
+                  </div>
+                  <div class="clearer">
+                    &nbsp;
+                  </div>
+                </div>
+                <div class="modes w-field">
+                  <label class="invisible">
+                    Display mode
+                  </label>
+                  <div class="value w-choices">
+                    <ul class="mode-2">
+                      <li class="absolute current">
+                        Absolute
+                      </li>
+                      <li class="relative">
+                        Relative
+                      </li>
+                      <li class="empty" />
+                    </ul>
+                  </div>
+                  <div class="clearer">
+                    &nbsp;
+                  </div>
+                </div>
+                <div class="clear">
+                  &nbsp;
+                </div>
+                <div class="w-field">
+                  <div class="label">
+                    Guidelines ratio
+                  </div>
+                  <div class="value">
+                    <input align="absmiddle" type="text" style="width:40px" value="1.00" class="in-guidelinesRatio" />
+                    <div style="width:150px" class="ctl-guidelinesRatio">
+                      &nbsp;
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearer">
+              &nbsp;
+            </div>
+          </div>
+        </div>
+        <div class="ExpenseTagsViz section w-dataviz">
+          <div class="header">
+            <div class="filter">
+              <div class="right">
+                <label>
+                  Sorty by
+                </label>
+                <span class="value w-choices">
+                  <ul class="sort-by">
+                    <li class="name current">
+                      by name
+                    </li>
+                    <li class="expenses">
+                      by expense
+                    </li>
+                    <li class="deviation">
+                      by deviation
+                    </li>
+                    <li class="empty" />
+                  </ul>
+                </span>
+              </div>
+              <div class="left">
+                <label>
+                  Filter by
+                </label>
+                <span class="DepartmentSelector Selector filter value w-applet">
+                  <span class="w-clickdetails">
+                    <span class="departments summary">
+                      <label>
+                        department:
+                      </label>
+                      <span class="do-showDetails value">
+                        All
+                      </span>
+                    </span>
+                    <div class="details">
+                      <div class="header">
+                        <h3>Filter by department</h3>
+                      </div>
+                      <div class="body">
+                        <div class="filter">
+                          <div class="w-choices left">
+                            Select
+                            <ul class="as-inline">
+                              <li class="do-selectAll">
+                                All
+                              </li>
+                              <li class="do-selectNone">
+                                None
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="right">
+                            <input type="button" value="OK" class="do-ok do-hideDetails" />
+                            <span class="hset-5">
+                              
+                            </span>
+                            <input type="button" value="Cancel" class="do-hideDetails" />
+                          </div>
+                          <div class="clearer">
+                            &nbsp;
+                          </div>
+                        </div>
+                        <div class="departments choices">
+                          <div class="span-50p">
+                            <ul>
+                              <li class="template hidden">
+                                <input type="checkbox" value="0" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  <span class="out">Ambassador</span>
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="span-50p">
+                            <ul>
+                              <li class="template hidden">
+                                <input type="checkbox" value="0" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  <span class="out">Ambassador</span>
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="clear">
+                          &nbsp;
+                        </div>
+                        <div class="operations hidden">
+                          <input type="button" value="OK" class="do-ok do-hideDetails" />
+                          <span class="hset-5">
+                            
+                          </span>
+                          <input type="button" value="Cancel" class="do-hideDetails" />
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+                <span class="PositionSelector Selector filter value w-applet">
+                  <span class="w-clickdetails">
+                    <span class="position summary">
+                      <label>
+                        positions:
+                      </label>
+                      <span class="do-showDetails value">
+                        All
+                      </span>
+                    </span>
+                    <div class="details">
+                      <div class="header">
+                        <h3>Filter by position</h3>
+                      </div>
+                      <div class="body">
+                        <div class="filter">
+                          <div class="w-choices left">
+                            Select
+                            <ul class="as-inline">
+                              <li class="do-selectAll">
+                                All
+                              </li>
+                              <li class="do-selectNone">
+                                None
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="right">
+                            <input type="button" value="OK" class="do-ok do-hideDetails" />
+                            <span class="hset-5">
+                              
+                            </span>
+                            <input type="button" value="Cancel" class="do-hideDetails" />
+                          </div>
+                          <div class="clearer">
+                            &nbsp;
+                          </div>
+                        </div>
+                        <div class="positions choices">
+                          <div class="span-50p">
+                            <ul>
+                              <li>
+                                <input type="checkbox" value="0" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Ambassador
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="1" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Assistant Commissioner
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="2" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Assistant Deputy Minister
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="3" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Associate Deputy Minister
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="4" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Board Member
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="5" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Chair
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="6" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Chief Financial Officer
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="7" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Chief Information Officer
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="8" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Chief of Staff
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="9" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Chief Operations Officer
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="10" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Commisioner
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="11" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Deputy Minister
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="12" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Director
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="span-50p">
+                            <ul>
+                              <li>
+                                <input type="checkbox" value="13" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Director of Communications
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="14" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  General/Executive Director
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="15" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Legal Counsel
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="16" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Minister
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="17" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  MP
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="18" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Parliamentary Secretary
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="19" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  President/Chief Executive Officer
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="21" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Press Secretary
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="22" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Regional Director
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="23" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Special Assistant
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="24" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Vice President
+                                </span>
+                              </li>
+                              <li>
+                                <input type="checkbox" value="25" />
+                                <span class="hsep-5">
+                                  
+                                </span>
+                                <span class="name">
+                                  Other
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="clear">
+                          &nbsp;
+                        </div>
+                        <div class="operations hidden">
+                          <input type="button" value="OK" class="do-ok do-hideDetails" />
+                          <span class="hset-5">
+                            
+                          </span>
+                          <input type="button" value="Cancel" class="do-hideDetails" />
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+                <span class="hidden">
+                  <input type="checkbox" align="absmiddle" />Hide when no data
+                </span>
+                <div class="hidden">
+                  <label>
+                    Quick find
+                  </label>
+                  <input type="text" class="in-quickfind" />
+                  <input type="button" value="Show all" class="do-resetQuickfind" />
+                </div>
+              </div>
+              <div class="clearer">
+                &nbsp;
+              </div>
+            </div>
+            <div class="timeline">
+              <div id="TimelineWidget" class="w-slider">
+                <div class="w-slider-body">
+                  <div class="w-cursor is-resizable">
+                    &nbsp;
+                  </div>
+                </div>
+              </div>
+              <div class="labels">
+                <div class="min">
+                  <span class="out">
+                    jan. 2003
+                  </span>
+                </div>
+                <div class="max">
+                  <span class="out">
+                    dec. 2008
+                  </span>
+                </div>
+                <div class="current">
+                  <span class="start">
+                    <span class="out">jan. 2003</span>
+                  </span>&rarr;
+                  <span class="end">
+                    <span class="out">dec. 2008</span>
+                  </span>(
+                  <span class="dur">
+                    <span class="out">71</span>
+                  </span>months
+)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div align="right" class="settings right">
+              <span class="w-choices">
+                <ul class="mode-1">
+                  <li class="label">
+                    Display parameters
+                  </li>
+                  <li class="cumulative current">
+                    Cumulative
+                  </li>
+                  <li class="month">
+                    Per month
+                  </li>
+                  <li class="empty" />
+                </ul>
+                <ul class="mode-2">
+                  <li class="absolute current">
+                    Absolute
+                  </li>
+                  <li class="relative">
+                    Relative
+                  </li>
+                  <li class="empty" />
+                </ul>
+              </span>guidelines ratio:
+              <input align="absmiddle" type="text" style="width:40px" value="1.00" class="in-guidelinesRatio" />
+            </div>
+            <div class="legend left">
+              Legend:
+              <ul class="items dataset">
+                <li class="item hos hospitality clickable current">
+                  <span class="color">
+                    &mdash;
+                  </span>
+                  <span class="name">
+                    Hospitality expenses
+                  </span>
+                </li>
+                <li class="item tra travel clickable current">
+                  <span class="color">
+                    &mdash;
+                  </span>
+                  <span class="name">
+                    Travel expenses
+                  </span>
+                </li>
+                <li class="item gd guidelines clickable">
+                  <span class="color">
+                    &mdash;
+                  </span>
+                  <span class="name">
+                    Guidelines
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <ul class="tags clear">
+              <li class="clearer" />
+            </ul>
+            <div class="clearer">
+              &nbsp;
+            </div>
+          </div>
+        </div>
+        <div class="About section hidden">
+          <div class="header">
+            <div class="title">
+              <h2>About the data</h2>
+            </div>
+          </div>
+          <div class="body">
+            Lorem ipsum dolor sit amet
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Footer" class="clear smaller">
+      <div class="body">
+        <div class="right">
+          2008-2009
+        </div>
+        <div class="left">
+          <a href="http://www.visiblegovernment.ca">VisibleGovernment</a>
++
+          <a href="http://www.datalicious.ca">Datalicious</a>
+        </div>
+        <div class="clearer">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    <div id="Dialogs" class="hidden">
+      <div class="w-shade">
+        &nbsp;
+      </div>
+    </div>
+    <div id="Templates" class="hidden">
+      <div class="ExpenseTagTooltip">
+        <div class="title">
+          <img src="/lib/images/icon-calendar-16x16.png" align="absmiddle" />
+          <span class="label">
+            Details for month
+          </span>
+          <span class="month value">
+            <span class="out">
+              MONTH
+            </span>
+          </span>
+        </div>
+        <div class="when-data">
+          <table width="100%">
+            <tr class="expenses">
+              <th>
+                Expenses
+              </th>
+              <td class="value">
+                <span class="out">
+                  
+                </span>
+              </td>
+            </tr>
+            <tr class="hospitality sub">
+              <th>
+                Hospitality
+              </th>
+              <td class="value">
+                <span class="out">
+                  
+                </span>
+              </td>
+            </tr>
+            <tr class="travel sub">
+              <th>
+                Travel
+              </th>
+              <td class="value">
+                <span class="out">
+                  
+                </span>
+              </td>
+            </tr>
+            <tr class="with-separator">
+              <td colspan="2" />
+            </tr>
+            <tr class="guidelines">
+              <th>
+                Guidelines
+              </th>
+              <td class="value">
+                <span class="out">
+                  
+                </span>
+              </td>
+            </tr>
+            <tr class="delta">
+              <th>
+                Delta
+              </th>
+              <td class="value">
+                <span class="out">
+                  
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="when-no_data">
+          No data available
+        </div>
+      </div>
+      <li class="ExpenseTag w-element">
+        <div class="decorations">
+          <div class="w-tip-lm">
+            &nbsp;
+          </div>
+        </div>
+        <div class="body pos-rel">
+          <div class="cursor hidden">
+            &nbsp;
+          </div>
+          <canvas width="150" height="150">
+            
+          </canvas>
+        </div>
+        <div class="header">
+          <div class="tag left">
+            <span class="out-total">
+              [N]$
+            </span>
+          </div>
+          <div class="variation right">
+            <span class="out">
+              [N]%
+            </span>
+          </div>
+          <div class="clearer">
+            &nbsp;
+          </div>
+        </div>
+        <div class="footer">
+          <div class="origin">
+            <div class="out">
+              [DEPARTMENT]
+            </div>
+          </div>
+          <div class="more">
+            <input type="button" value="Show more..." class="do-showMore" />
+          </div>
+        </div>
+      </li>
+      <div class="ExpenseTagDetails details">
+        <div class="body">
+          <div class="departmentInfo">
+            <div class="right maingraph">
+              <canvas>
+                
+              </canvas>
+            </div>
+            <table>
+              <tbody>
+                <tr class="size">
+                  <th>
+                    Size
+                  </th>
+                  <td class="value out">
+                    [SIZE]
+                  </td>
+                </tr>
+                <tr class="expenses">
+                  <th>
+                    Expenses
+                  </th>
+                  <td class="value out">
+                    AMOUNT
+                  </td>
+                </tr>
+                <tr class="guidelines">
+                  <th>
+                    Guidelines
+                  </th>
+                  <td class="value out">
+                    AMOUNT
+                  </td>
+                </tr>
+                <tr class="variance">
+                  <th>
+                    Deviation
+                  </th>
+                  <td class="value out">
+                    AMOUNT
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="clearer">
+              &nbsp;
+            </div>
+          </div>
+          <div class="details">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <thead>
+                <tr>
+                  <th class="name w-200">
+                    <span class="label">Position</span>
+                  </th>
+                  <th class="expenses align-right">
+                    
+                    <span class="label">
+                      Expenses
+                    </span>
+                    <span class="unit">
+                      (K$)
+                    </span>
+                  </th>
+                  <th class="guidelines align-right">
+                    
+                    <span class="label">
+                      Guidelines
+                    </span>
+                    <span class="unit">
+                      (K$)
+                    </span>
+                  </th>
+                  <th class="variance">
+                    <span class="label">
+                      &Delta;
+                    </span>
+                    <span class="unit">
+                      (+/-%)
+                    </span>
+                  </th>
+                  <th class="positiongraph">
+                    <span class="label">Expenses and guidlines over period</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="template hidden">
+                  <td class="name">
+                    <span class="out">NAME</span>
+                  </td>
+                  <td class="expenses">
+                    
+                    <span class="out">AMOUNT</span>
+                  </td>
+                  <td class="guidelines">
+                    <span class="out">AMOUNT</span>
+                  </td>
+                  <td class="variance">
+                    
+                    <span class="out">AMOUNT</span>
+                  </td>
+                  <td class="positiongraph">
+                    <canvas height="25px">
+                      
+                    </canvas>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="information">
+            The above table represents the detail for the department
+expenses, on a per-position. The sum of all the
+individual position expenses is equal to the whole
+department expenses.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

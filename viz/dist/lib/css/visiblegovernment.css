@@ -1,0 +1,688 @@
+body {
+	background: black;
+	font-family: Arial,Helvetica,sans-serif;
+}
+
+a:link, a:visited, a:hover, a:active {
+	color: #36D7FF;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #36D7FF;
+}
+
+a:hover {
+	color: #009494;
+	background: yellow;
+}
+
+.qtip-content {
+	font-size: 11px;
+	background: #FFFFE0;
+}
+
+.qtip-content table tr th,
+.qtip-content table tr td {
+	font-size: 10px;
+}
+
+#MainArea > .header {
+	background: white url(../images/bg-tag-prototype.png) no-repeat top left;
+	color: black;
+	padding-bottom: 20px;
+	border-bottom: 1px solid black;
+	padding-top: 40px;
+	padding-left: 70px;
+	padding-right: 70px;
+}
+
+#MainArea > .header h1  {
+	font-size:40px;
+	font-weight:bold;
+	letter-spacing:-0.025em;
+	line-height:35px;
+	margin-left:-4px;
+}
+
+#MainArea > .header h2  {
+	color:#36DFFF;
+	font-size:22px;
+	font-weight:bold;
+	letter-spacing:-0.025em;
+}
+
+#MainArea > .header .title .hi {
+	padding-left: 0.050em;
+	color: #A0A0A0;
+}
+
+#MainArea > .body {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+#MainArea .section {
+	padding: 20px;
+	background: white;
+}
+
+#Footer  {
+	font-size: 11px;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: left;
+	color: #E0E0E0;
+	background: #303030;
+}
+
+#Footer .text {
+	position: absolute;
+	left: 20px;
+}
+
+#Footer .copyright {
+	text-align: right;
+}
+
+
+#MainArea .Parameters {
+	background: #1B6C80;
+	font-weight: bold;
+	color: #36DFFF;
+	font-size: 12px;
+}
+
+#MainArea .Parameters label {
+}
+
+.Parameters input {
+	font-size: 10px;
+	border: 1px solid black;
+	padding: 2px 5px; 
+	border: 1px solid #36D7FF;
+	background: transparent;
+	color: #36D7FF;
+}
+
+.Parameters input:focus {
+	background: white;
+	color: black;
+}
+
+.Parameters input[type=button] {
+	padding: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	background: #36D7FF;
+	color: white;
+	border-bottom: 2px solid #ACEEFF;
+}
+
+.w-clickdetails .chooser .operations {
+	padding-top: 10px;
+	border-top: 1px solid #36D7FF;
+}
+
+.PeriodSelector .startDate > .body {
+	padding-right: 10px;
+	padding-bottom: 10px;
+	border-right: 1px solid #36D7FF;
+}
+
+.PeriodSelector .endDate > .body {
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.Selector .header {
+	padding-top: 10px;
+}
+
+.Selector .filter {
+	font-size: 11px;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-top: 1px solid #A0A0A0;
+	border-bottom: 1px solid #A0A0A0;
+	background: #E0E0E0;
+}
+
+.Selector .filter .w-choices {
+	padding-top: 3px;
+}
+
+.Selector .details {
+	font-size: 120%;
+	background: #F0F0F0;
+	border: 2px solid #A0A0A0;
+	width: 600px;
+}
+
+
+.Selector .details .choices {
+	font-size: 11px;
+}
+
+.Selector .details .choices li {
+	padding: 5px;
+	border-top: 1px dotted #A0A0A0;
+	border-bottom: 1px dotted #A0A0A0;
+	opacity: 0.5;
+	margin: 5px;
+	cursor: pointer;
+}
+
+.Selector .details .choices li input {
+	display: none;
+}
+
+.Selector .details .choices .selected {
+	border-top: 1px solid #A0A0A0;
+	border-bottom: 1px solid #A0A0A0;
+	background: #FFFFFF;
+	opacity: 1.0;
+}
+
+.Selector .details .choices li:hover {
+	border-top: 1px solid #36D7FF;
+	border-bottom: 1px solid #36D7FF;
+	background: #36D7FF;
+	color: white;
+	opacity: 1.0;
+}
+
+.Selector .details .choices li:hover.selected {
+	border-top: 1px dotted #36D7FF;
+	border-bottom: 1px dotted #36D7FF;
+}
+
+.Selector .summary .value {
+	padding: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right:5px;
+	cursor: pointer;
+	border-bottom: 2px solid #36D7FF;
+	color: #36D7FF;
+}
+
+.Selector .summary *:hover.value {
+	background: #29849B;
+	color: white;
+}
+
+.Selector .summary {
+	padding-right: 5px;
+}
+
+#MainArea .body .ExpenseTagsViz {
+	background: white;
+}
+
+.ExpenseTagsViz > .header {
+	font-size: 11px;
+	color: #606060;
+	background: #E0E0E0;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.ExpenseTagsViz .header .timeline {
+	padding-top: 10px;
+}
+
+.ExpenseTagsViz .header .timeline .w-cursor {
+	width: 100%;
+	left: 0px;
+}
+
+
+.ExpenseTagsViz .header .timeline .labels {
+	position: relative;
+	text-align: center;
+}
+
+.ExpenseTagsViz .header .timeline .labels .min {
+	border-left: 1px solid #A0A0A0;
+	padding-left: 5px;
+	position: absolute;
+	left: 0px;
+}
+
+.ExpenseTagsViz .header .timeline .labels .max {
+	position: absolute;
+	right: 0px;
+	border-right: 1px solid #A0A0A0;
+	padding-right: 5px;
+}
+
+
+.ExpenseTagsViz > .header .filter .w-choices ul {
+	display: inline;
+}
+
+.ExpenseTagsViz > .header .filter .w-choices ul li {
+	display: inline;
+	float: none;
+}
+
+.ExpenseTagsViz > .body {
+	padding-top: 10px;
+}
+
+.ExpenseTagsViz .legend {
+	color: #A0A0A0;
+	font-size: 11px;
+	padding-bottom: 5px;
+}
+
+
+.ExpenseTagsViz .legend .clickable {
+	cursor: pointer;
+}
+
+.ExpenseTagsViz .legend .current {
+	color: #202020;
+}
+
+.ExpenseTagsViz .legend .hos .color {
+	color: #eddc22;
+	font-weight: bold;
+}
+
+.ExpenseTagsViz .legend .tra .color {
+	color: #f85a92;
+	font-weight: bold;
+}
+
+.ExpenseTagsViz .legend ul {
+	padding-left: 10px;
+	display: inline;
+}
+
+.ExpenseTagsViz .legend ul li {
+	display: inline;
+	padding-right: 10px;
+}
+
+.ExpenseTagsViz .tags {
+	margin-right: -10px;
+}
+
+.ExpenseTagsViz .ui-sortable-placeholder,
+.ExpenseTagsViz .ui-sortable-helper {
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.ExpenseTag.w-element {
+	border: 1px solid #A0A0A0;
+	font-size: 10px;
+	position: relative;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 150px;
+	float: left;
+	cursor: pointer;
+}
+
+.ExpenseTag.nodata {
+	opacity: 0.25;
+}
+
+.ExpenseTag.detailed {
+	margin-top: 10px;
+	margin-bottom: -10px;
+	border: 1px solid #36D7FF;
+}
+
+.ExpenseTag .cursor {
+	position: absolute;
+	z-index: 1000;
+	background: yellow;
+	opacity: 0.5;
+}
+
+.ExpenseTag .decorations .w-tip-lm {
+	display: none;
+}
+
+.ExpenseTag.detailed .decorations .w-tip-lm {
+	position: absolute;
+	display: block;
+	width: 31px;
+	height: 20px;
+	background: url("../images/tip-lm-selected.png");
+	z-index: 200;
+	left: 59px;
+	bottom: -20px;
+}
+
+.ExpenseTag.w-element > .header {
+	left: 0px;
+	right: 0px;
+	padding: 2px;
+	background: #909090;
+	color: white;
+}
+
+.ExpenseTag.detailed > .header {
+	background: #36D7FF;
+}
+
+.ExpenseTag.w-element > .header .tag {
+}
+
+.ExpenseTag.w-element > .header .positive.variation {
+	color: #B34138;
+}
+
+.ExpenseTag.w-element > .footer {
+	position: relative;
+	padding: 5px;
+	background: #A0A0A0;
+	color: white;
+	font-size: 11px;
+	font-weight: bold;
+	color: white;
+}
+
+.ExpenseTag.detailed > .footer {
+	background: #36D7FF;
+}
+
+.ExpenseTag.w-element > .footer .origin {
+	overflow: none;
+	height: 2.5em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.ExpenseTag .footer .more {
+	display: none;
+	position: absolute;
+	left: -1px;
+	right: -1px;
+	bottom: -1px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	background: #E0E0E0;
+	font-weight: normal;
+	text-align: center;
+	z-index: 200;
+}
+
+*:hover.ExpenseTag .footer .more {
+	display: block;
+}
+
+.ExpenseTagTooltip {
+	min-width: 200px;
+	background: #FFFFA0;
+	color: #70655C;
+	padding: 5px;
+}
+
+.nodata .ExpenseTagTooltip {
+	background: #FFFFFF;
+	color: #A0A0A0;
+	padding: 0px;
+}
+
+.ExpenseTagTooltip .title {
+	border-bottom: 1px solid #A0A0A0;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.ExpenseTagTooltip .positive {
+	color: red;
+}
+
+.ExpenseTagTooltip .value {
+	font-weight: bold;
+	padding-left: 5px;
+	text-align: right;
+}
+
+.ExpenseTagTooltip .sub th {
+	padding-left: 10px;
+}
+
+.ExpenseTagTooltip .sub .value {
+	font-weight: normal;
+}
+
+.ExpenseTagTooltip tr.with-separator th,
+.ExpenseTagTooltip tr.with-separator td {
+	border-top: 1px solid #A0A0A0;
+	margin-top:
+	padding-top: 5px;
+}
+
+.ExpenseTagDetails {
+	display: block;
+	clear: both;
+	padding: 10px;
+	font-size: 11px;
+}
+
+.ExpenseTagDetails table tr td,
+.ExpenseTagDetails table tr th {
+	font-size: 11px;
+}
+
+.ExpenseTagDetails table {
+	border-collapse: collapse;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.ExpenseTagDetails table tr th {
+	font-weight: bold;
+	padding-right: 10px;
+}
+
+.ExpenseTagDetails table tr td {
+	vertical-align: middle;
+	text-align: left;
+}
+
+.ExpenseTagDetails > .header {
+	background: #606060;
+	position: relative;
+	color: white;
+	padding: 10px;
+	margin: -10px;
+	margin-bottom: 10px;
+}
+
+.ExpenseTagDetails > .header .operations {
+	position: absolute;
+	right: 10px;
+	top: 14px;
+}
+
+.ExpenseTagDetails > .header .operations div {
+	cursor: pointer;
+}
+
+.ExpenseTagDetails > .body {
+	padding: 10px;
+	padding-bottom: 20px;
+}
+
+.ExpenseTagDetails > .body td.positiongraph canvas {
+	/* FIXME: I don't get why, but this is necessary to remove a vspace that
+	 * appears */
+	margin-bottom: -4px;
+}
+
+.ExpenseTagDetails .dataTables_wrapper {
+	width: 100%;
+ }
+
+.ExpenseTagDetails .dataTables_wrapper table {
+	clear: both;
+	width: 100% !important;
+}
+
+.ExpenseTagDetails .maingraph {
+	border: 1px solid #A0A0A0;
+	margin-bottom: 10px;
+}
+
+.ExpenseTagDetails .departmentInfo {
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #E0E0E0;
+	font-size: 12px;
+}
+
+.ExpenseTagDetails .departmentInfo table th {
+	padding-right: 10px;
+}
+
+.ExpenseTagDetails .details table th {
+	border-bottom: 1px solid black;
+	padding-left: 5px;
+	padding-right: 10px;
+}
+
+.ExpenseTagDetails .details table td {
+	border-bottom: 1px solid #A0A0A0;
+	background: #F0F0F0;
+	padding-left: 5px;
+}
+
+.ExpenseTagDetails .details  th .unit {
+	font-weight: normal;
+	color: #A0A0A0;
+}
+
+.ExpenseTagDetails .details  th.guidelines,
+.ExpenseTagDetails .details  th.expenses {
+	width: 75px;
+}
+
+.ExpenseTagDetails .details  th.variance {
+	width: 25px;
+}
+
+.ExpenseTagDetails .details  td.guidelines,
+.ExpenseTagDetails .details  td.expenses {
+	text-align: right;
+}
+
+.ExpenseTagDetails .details  td.variance {
+	color: #A0A0A0;
+}
+
+.ExpenseTagDetails .details table th.positiongraph {
+	text-align: right;
+}
+
+.ExpenseTagDetails .details table td.positiongraph {
+	text-align: right;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 11px;
+}
+
+
+.ExpenseTagDetails  .body .information {
+	border-top: 1px dashed white;
+	padding-top: 10px;
+	color: #A0A0A0;
+}
+
+.ExpenseTableViz table  {
+	border-collapse: collapse;
+}
+
+.ExpenseTableViz table thead tr th  {
+	font-weight: bold;
+	border-bottom: 2px solid #A0A0A0;
+	padding-right: 10px;
+	cursor: pointer;
+}
+
+.ExpenseTableViz table thead tr th .label {
+	padding: 5px;
+	padding-bottom: 0px;
+	background: #A0A0A0;
+	color: white;
+}
+
+.ExpenseTableViz table tbody tr td  {
+	border-top: 1px solid #A0A0A0;
+	border-bottom: 1px solid #A0A0A0;
+	font-size: 90%;
+	vertical-align: middle;
+	padding: 2px;
+}
+
+.ExpenseTableViz td.position .container {
+	position: relative;
+	width: 100px;
+	height: 15px;
+	background: #A0A0A0;
+	margin: 1px;
+}
+
+.ExpenseTableViz td.position .mean {
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	width: 18px;
+	height: 15px;
+	background: #36D7FF;
+	z-index: 100;
+}
+
+.ExpenseTableViz td.position .cursor {
+	position: absolute;
+	left: 15px;
+	width: 2px;
+	height: 15px;
+	background: #1B6C80;
+	z-index: 101;
+}
+
+.ExpenseTableViz td.number {
+	text-align: right;
+}
+
+.ExpenseTableViz .variation .value {
+	display: block;
+	float: right;
+	color: white;
+	padding: 2px;
+	background: #A0A0A0;
+	font-size: 11px;
+	width: 40px;
+	text-align: right;
+	margin: 2px;
+}
+
+.ExpenseTableViz .positive.variation .value {
+	background: red;
+}
+
+.settings {
+	font-size: 11px;
+	color: #A0A0A0;
+}
+
+.settings ul {
+	display: inline;
+}
+
+.settings ul li.label {
+	color: #A0A0A0;
+}

@@ -1,0 +1,12 @@
+$(document).ready(function(){
+	$(".with-shadow").each(function(){
+		$(this).prepend(html.div({_:"shadow-ur"}))
+		$(this).prepend(html.div({_:"shadow-um"}))
+		$(this).prepend(html.div({_:"shadow-ul"}))
+		$(this).prepend(html.div({_:"shadow-ml"}))
+		$(this).prepend(html.div({_:"shadow-mr"}))
+		$(this).prepend(html.div({_:"shadow-lr"}))
+		$(this).prepend(html.div({_:"shadow-lm"}))
+		$(this).prepend(html.div({_:"shadow-ll"}))
+	})
+})

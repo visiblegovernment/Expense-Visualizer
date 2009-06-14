@@ -1,0 +1,250 @@
+html, body, table tr td, table tr th {
+	font: 10.5pt sans-serif;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	vertical-align: top;
+}
+
+input[type=checkbox] {
+	padding-right: 5px;
+	vertical-align: middle;
+}
+
+input[type=text], input[type=password], textarea {
+	width: 150px;
+}
+
+input[type=text], input[type=password], textarea {
+	font-family: sans-serif;
+	font-size: 11px;
+	margin-bottom: 2px;
+}
+
+input[type=text].default, textarea.default {
+	color: #A0A0A0;
+}
+
+h1,h2,h3,h4,h5 {
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 140%;
+}
+
+h2 {
+	font-size: 130%;
+}
+
+h3 {
+	font-size: 120%;
+}
+
+ul.nolist  {
+	padding: 0;
+	margin: 0;
+}
+
+ul.nolist li {
+	list-style-type: none;
+}
+
+ul.nolist li {
+	list-style-type: none;
+}
+
+.has-layout {
+	position: relative;
+}
+
+.lighter {
+	opacity: 0.5;
+}
+
+.smaller {
+	font-size: 80%;
+}
+
+.bigger {
+	font-size: 120%;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.invisible {
+	opacity: 0.0 !important;
+}
+
+.pos-rel {
+	position: relative;
+}
+
+.pos-abs {
+	position: absolute;
+}
+
+.clear {
+	clear: both;
+}
+
+.clearer {
+	clear: both;
+	height: 0px;
+	width: 0px;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.as-block {
+	display: block;
+}
+
+.as-inline {
+	display: inline;
+}
+
+.hr-top {
+	padding-top: 5px;
+	margin-top: 5px;
+	border-top: 1px solid #A0A0A0;
+}
+
+.hr-bottom {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #A0A0A0;
+}
+
+.indent-10 {
+	padding-left: 10px;
+}
+
+.inset-10 {
+	padding: 10px;
+}
+
+.inset-5 {
+	padding: 5px;
+}
+
+.rm-10 { 
+	margin-right: 10px;
+}
+
+.hsep-5 {
+	padding-right: 5px;
+}
+
+.hsep-10 {
+	padding-right: 10px;
+}
+
+.vsep-5 {
+	padding-top: 5px;
+}
+
+.vsep-10 {
+	padding-top: 10px;
+}
+
+.spacer {
+	padding: 0;
+	padding-left: 5px;
+}
+
+.spacer-10 {
+	padding: 0;
+	padding-left: 10px;
+}
+
+.span-last {
+	clear: right;
+}
+
+.span-20p {
+	float: left;
+	width: 20%;
+}
+
+.span-40p {
+	float: left;
+	width: 40%;
+}
+
+.span-25p {
+	float: left;
+	width: 25%;
+}
+
+.span-50p {
+	float: left;
+	width: 50%;
+}
+
+.span-75p {
+	float: left;
+	width: 75%;
+}
+
+.span-80p {
+	float: left;
+	width: 80%;
+}
+
+.span-33p {
+	float: left;
+	width: 33.332%;
+}
+
+.span-66p {
+	float: left;
+	width: 66.332%;
+}
+
+.rcol-200l {
+	position: relative;
+	margin-right: 201px;
+}
+
+.rcol-200r {
+	float: right;
+	width: 200px;
+}
+
+.w-100p {
+	width: 100% !important;
+}
+
+.w-200 {
+	width: 200px !important;
+}
+
+.w-250 {
+	width: 250px !important;
+}
+
+.w-400 {
+	width: 400px !important;
+}
+
+.debug {
+	border: 1px solid red;
+	margin: -1px;
+}
