@@ -1,0 +1,40 @@
+<span.DepartmentSelector.Selector.filter.value.w-applet
+	<span.w-clickdetails
+		<span.departments.summary
+			<label:department:
+			<span.do-showDetails.value:All
+			#<input.do-showDetails(type=button,value=Pick)
+		<div.details
+			<div.header
+				<h3:Filter by department
+			<div.body
+				<div.filter
+					<div.w-choices.left
+						Select
+						<ul.as-inline
+							<li.do-selectAll:All
+							<li.do-selectNone:None
+					<div.right
+						<input.do-ok.do-hideDetails(type=button,value=OK)
+						<span.hset-5
+						<input.do-hideDetails(type=button,value=Cancel)
+					<div.clearer
+				<div.departments.choices
+					<div.span-50p
+						<ul
+							<li.template.hidden
+								<input(type=checkbox,value=0)
+								<span.hsep-5
+								<span.name:<span.out:Ambassador>
+					<div.span-50p
+						<ul
+							<li.template.hidden
+								<input(type=checkbox,value=0)
+								<span.hsep-5
+								<span.name:<span.out:Ambassador>
+				<div.clear
+				<div.operations.hidden
+					<input.do-ok.do-hideDetails(type=button,value=OK)
+					<span.hset-5
+					<input.do-hideDetails(type=button,value=Cancel)
+

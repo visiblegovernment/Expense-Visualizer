@@ -1,0 +1,72 @@
+.shadow-ul {
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	width: 10px;
+	height: 10px;
+	background: url("../images/shadow-left-top.png") no-repeat;
+}
+
+.shadow-um {
+	position: absolute;
+	top: -10px;
+	left: 0px;
+	right: 0px;
+	height: 10px;
+	background: url("../images/shadow-top.png") repeat-x;
+}
+
+.shadow-ur {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 10px;
+	height: 10px;
+	background: url("../images/shadow-top-right.png") no-repeat;
+}
+
+.shadow-ml {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: -10px;
+	width: 10px;
+	background: url("../images/shadow-left.png") repeat-y;
+}
+
+.shadow-mr {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	right: -10px;
+	width: 10px;
+	background: url("../images/shadow-right.png") repeat-y;
+}
+
+.shadow-ll {
+	position: absolute;
+	bottom: -10px;
+	left: -10px;
+	width: 10px;
+	height: 10px;
+	background: url("../images/shadow-bottom-left.png") no-repeat;
+}
+
+.shadow-lm {
+	position: absolute;
+	bottom: -10px;
+	right: 0px;
+	left: 0px;
+	height: 10px;
+	background: url("../images/shadow-bottom.png") repeat-x;
+}
+
+.shadow-lr {
+	position: absolute;
+	bottom: -10px;
+	right: -10px;
+	width: 10px;
+	height: 10px;
+	background: url("../images/shadow-right-bottom.png") no-repeat;
+}
+

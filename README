@@ -1,0 +1,24 @@
+== VisibleGovernment
+== Canadian Federal Government Travel And Hospitality Expenses
+
+To load the data:
+
+>    make loaddb MYSQL_USER=joe MYSQL_PASSWORD=heyho
+
+To generate the dataset JSON files:
+
+>   python collect.py
+
+To start working on the viz
+
+>    cd viz ; make run
+
+but you'll need:
+
+ - Python 2.4+
+ - LambdaFactory <http://www.github.com/sebastien/lambdafactory>
+ - Sugar         <http://www.github.com/sebastien/sugar>
+ - Pamela        <http://www.github.com/sebastien/pamela>
+ - Retro         <http://www.github.com/sebastien/retro>
+
+# EOF

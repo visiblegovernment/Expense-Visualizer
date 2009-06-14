@@ -1,0 +1,133 @@
+<span.PositionSelector.Selector.filter.value.w-applet
+	<span.w-clickdetails
+		<span.position.summary
+			<label:positions:
+			<span.do-showDetails.value:All
+			#<input.do-showDetails(type=button,value=Pick)
+		<div.details
+			<div.header
+				<h3:Filter by position
+			<div.body
+				<div.filter
+					<div.w-choices.left
+						Select
+						<ul.as-inline
+							<li.do-selectAll:All
+							<li.do-selectNone:None
+					<div.right
+						<input.do-ok.do-hideDetails(type=button,value=OK)
+						<span.hset-5
+						<input.do-hideDetails(type=button,value=Cancel)
+					<div.clearer
+				<div.positions.choices
+					<div.span-50p
+						<ul
+							<li
+								<input(type=checkbox,value=0)
+								<span.hsep-5
+								<span.name:Ambassador
+							<li
+								<input(type=checkbox,value=1)
+								<span.hsep-5
+								<span.name:Assistant Commissioner
+							<li
+								<input(type=checkbox,value=2)
+								<span.hsep-5
+								<span.name:Assistant Deputy Minister
+							<li
+								<input(type=checkbox,value=3)
+								<span.hsep-5
+								<span.name:Associate Deputy Minister
+							<li
+								<input(type=checkbox,value=4)
+								<span.hsep-5
+								<span.name:Board Member
+							<li
+								<input(type=checkbox,value=5)
+								<span.hsep-5
+								<span.name:Chair
+							<li
+								<input(type=checkbox,value=6)
+								<span.hsep-5
+								<span.name:Chief Financial Officer
+							<li
+								<input(type=checkbox,value=7)
+								<span.hsep-5
+								<span.name:Chief Information Officer
+							<li
+								<input(type=checkbox,value=8)
+								<span.hsep-5
+								<span.name:Chief of Staff
+							<li
+								<input(type=checkbox,value=9)
+								<span.hsep-5
+								<span.name:Chief Operations Officer
+							<li
+								<input(type=checkbox,value=10)
+								<span.hsep-5
+								<span.name:Commisioner
+							<li
+								<input(type=checkbox,value=11)
+								<span.hsep-5
+								<span.name:Deputy Minister
+							<li
+								<input(type=checkbox,value=12)
+								<span.hsep-5
+								<span.name:Director
+
+					<div.span-50p
+						<ul
+							<li
+								<input(type=checkbox,value=13)
+								<span.hsep-5
+								<span.name:Director of Communications
+							<li
+								<input(type=checkbox,value=14)
+								<span.hsep-5
+								<span.name:General/Executive Director
+							<li
+								<input(type=checkbox,value=15)
+								<span.hsep-5
+								<span.name:Legal Counsel
+							<li
+								<input(type=checkbox,value=16)
+								<span.hsep-5
+								<span.name:Minister
+							<li
+								<input(type=checkbox,value=17)
+								<span.hsep-5
+								<span.name:MP
+							<li
+								<input(type=checkbox,value=18)
+								<span.hsep-5
+								<span.name:Parliamentary Secretary
+							<li
+								<input(type=checkbox,value=19)
+								<span.hsep-5
+								<span.name:President/Chief Executive Officer
+							<li
+								<input(type=checkbox,value=21)
+								<span.hsep-5
+								<span.name:Press Secretary
+							<li
+								<input(type=checkbox,value=22)
+								<span.hsep-5
+								<span.name:Regional Director
+							<li
+								<input(type=checkbox,value=23)
+								<span.hsep-5
+								<span.name:Special Assistant
+							<li
+								<input(type=checkbox,value=24)
+								<span.hsep-5
+								<span.name:Vice President
+							<li
+								<input(type=checkbox,value=25)
+								<span.hsep-5
+								<span.name:Other
+				<div.clear
+				<div.operations.hidden
+					<input.do-ok.do-hideDetails(type=button,value=OK)
+					<span.hset-5
+					<input.do-hideDetails(type=button,value=Cancel)
+

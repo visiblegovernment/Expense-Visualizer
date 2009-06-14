@@ -1,0 +1,97 @@
+<div.PeriodSelector.Selector.value.w-clickdetails.w-applet
+	<span.startDate
+		<input.do-showDetails.value(type=input,value=1/2003,style=width:60px;text-align:center;)
+	<span:&rarr;
+	<span.endDate
+		<input.do-showDetails.value(type=input,value=12/2008,style=width:60px;text-align:center;)
+	<input.do-showDetails(type=button,value=Set)
+	<div.chooser.details
+		<div.header
+			<div.left
+				<h3:Select period for data
+			<div.right
+				<input.do-save.do-hideDetails(type=button,value=Set date)
+				<span: or >
+				<input.do-cancel.do-hideDetails(type=button,value=Cancel)
+			<div.vsep-5.clear
+		<div.body
+			<div.startDate.w-time.span-50p
+				<div.decoration
+					<div.shadow-mr
+					<div.shadow-lr
+					<div.shadow-lm
+				<div.body
+					<div.year.w-choices
+						<div
+							Select the start year:
+						<ul.values.clear
+							<li.current:2003
+							<li:2004
+							<li:2005
+							<li:2006
+							<li:2007
+							<li:2008
+						<div.clearer
+					<div.vsep-5
+					<div.month.w-choices
+						<div:
+							Select the start month:
+						<ul.values.clear
+							<li.current(value=0):Jan
+							<li(value=1):Feb
+							<li(value=2):Mar
+							<li(value=3):Apr
+							<li(value=4):May
+							<li(value=5):Jun
+							<li(value=6):Jul
+							<li(value=7):Aug
+							<li(value=8):Sep
+							<li(value=9):Oct
+							<li(value=10):Nov
+							<li(value=11):Dec
+						<div.clearer
+			<div.endDate.w-time.span-50p
+				<div.decoration
+					<div.shadow-mr
+					<div.shadow-lr
+					<div.shadow-lm
+				<div.body
+					<div.year.w-choices
+						<div
+							Select the end year:
+						<ul.values.clear
+							<li:2003
+							<li:2004
+							<li:2005
+							<li:2006
+							<li:2007
+							<li.current:2008
+						<div.clearer
+					<div.vsep-5
+					<div.month.w-choices
+						<div:
+							Select the end month:
+						<ul.values.clear
+							<li(value=0):Jan
+							<li(value=1):Feb
+							<li(value=2):Mar
+							<li(value=3):Apr
+							<li(value=4):May
+							<li(value=5):Jun
+							<li(value=6):Jul
+							<li(value=7):Aug
+							<li(value=8):Sep
+							<li(value=9):Oct
+							<li(value=10):Nov
+							<li.current(value=11):Dec
+						<div.clearer
+			<div.clearer
+			<div.operations.clear
+				<div.body
+					<input.do-save.do-hideDetails(type=button,value=Set date)
+					<span: or >
+					<a.action.do-cancel.do-hideDetails(href=#cancel):cancel
+			<div.clearer
+	#<div
+	#	<div.ctl-date(style="width:50%")
+	<div.clearer

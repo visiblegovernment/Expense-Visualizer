@@ -1,0 +1,10 @@
+<div#Footer.clear.smaller
+	<div.body
+		<div.right
+			2008-2009
+		<div.left
+			<a(href=http://www.visiblegovernment.ca):VisibleGovernment>
+			+
+			<a(href=http://www.datalicious.ca):Datalicious>
+		<div.clearer
+# EOF

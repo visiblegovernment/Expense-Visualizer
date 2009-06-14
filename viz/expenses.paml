@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html
+	<head
+		<title:VisibleGovernment | Expenses R1
+		%include includes/css
+		%include includes/scripts
+		<script(language=javascript,type="text/javascript",src="data/expenses-by_dep.json")
+		<script(language=javascript,type="text/javascript",src="data/positions.json")
+		<script(language=javascript,type="text/javascript",src="data/departments.json")
+		<script(language=javascript,type="text/javascript",src="lib/sjs/expensetag.sjs")
+	<body
+		<div#MainArea.area
+			<div.header
+				<div.title
+					<h1:VisibleGovernment<span.hi:.ca>
+					<h2:Canadian Federal Government Travel and Hospitality Expenses
+			<div.body
+				<div.Info.section.w-applet.hidden
+					<div.w-cards
+						<div.header
+							<div.w-tabs
+								<ul
+									<li
+										<span.do-selectCard.current(card=1):About
+									<li
+										<span.do-selectCard(card=2):Options
+								<div.clearer
+						<div.body
+							<div.about.w-card.current.N1
+								<div.header
+									About this visualization
+								<div.body
+									HELLO
+								<div.footer
+									<input.do-nextCard(type=button,value="Options")
+							<div.options.w-card.N2
+								<div.header
+									Visualization configuration
+								<div.body
+									HELLO
+#
+# ----------------------------------------------------------------------------
+#
+# VISUALIZATION PARAMETERS
+#
+# ----------------------------------------------------------------------------
+				<div.Parameters.section.w-applet.hidden
+					<div.compacted.hidden
+						<input.do-showOptions(type=button,value="Show options »")
+					<div.expanded
+						<div.hidden
+							<input.do-hideOptions(type=button,value="Hide options »")
+						<div.span-66p
+							<div.header.hidden
+								<h3.title:Show expenses for
+							<div.body.w-form-h
+								<div.dataset.w-field.group
+									<label:Displayed data
+									<div.value.w-choices
+										<ul
+											<li.hospitality.current:Hospitality Expenses
+											<li.travel.current:Travel Expenses
+											<li.empty
+										<div.clearer
+								<div.find.group.w-field
+									<label:For departements
+									%include applets/DepartmentSelector
+								<div.positions.group.w-field
+									<label:For positions
+									%include applets/PositionSelector
+								<div.period.group.w-field
+									<label:For Period
+									%include applets/PeriodSelector
+								<div.separator.group
+						<div.span-33p
+							<div.body.w-form-h
+								<div.modes.w-field
+									<label:Display mode
+									<div.value.w-choices
+										<ul.mode-1
+											<li.cumulative.current:Cumulative
+											<li.month:Per month
+											<li.empty
+									<div.clearer
+								<div.modes.w-field
+									<label.invisible:Display mode
+									<div.value.w-choices
+										<ul.mode-2
+											<li.absolute.current:Absolute
+											<li.relative:Relative
+											<li.empty
+									<div.clearer
+								<div.clear
+								<div.w-field
+									<div.label
+										Guidelines ratio
+									<div.value
+										<input.in-guidelinesRatio(align=absmiddle,type=text,style="width:40px",value=1.00)
+										#<div.left
+										<div.ctl-guidelinesRatio(style="width:150px")
+						<div.clearer
+
+
+# ----------------------------------------------------------------------------
+#
+# MAIN VISUALIZATION
+#
+# ----------------------------------------------------------------------------
+				<div.ExpenseTagsViz.section.w-dataviz
+					<div.header
+						<div.filter
+							<div.right
+								<label:Sorty by
+								<span.value.w-choices
+									<ul.sort-by
+										<li.name.current:by name
+										<li.expenses:by expense
+										<li.deviation:by deviation
+										<li.empty
+							<div.left
+								<label:Filter by
+								%include applets/DepartmentSelector
+								%include applets/PositionSelector
+								<span.hidden
+									<input(type=checkbox,align=absmiddle)
+									Hide when no data
+								<div.hidden
+									<label:Quick find
+									<input.in-quickfind(type=text)
+									<input.do-resetQuickfind(type=button,value=Show all)
+							<div.clearer
+						<div.timeline
+							<div#TimelineWidget.w-slider
+								<div.w-slider-body
+									<div.w-cursor.is-resizable
+							<div.labels
+								<div.min
+									<span.out:jan. 2003
+								<div.max
+									<span.out:dec. 2008
+								<div.current
+									<span.start:<span.out:jan. 2003>
+									&rarr;
+									<span.end:<span.out:dec. 2008>
+									(
+									<span.dur:<span.out:71>
+									months
+									)
+					<div.body
+						<div.settings.right(align=right)
+							<span.w-choices
+								<ul.mode-1
+									<li.label:Display parameters
+									<li.cumulative.current:Cumulative
+									<li.month:Per month
+									<li.empty
+								<ul.mode-2
+									<li.absolute.current:Absolute
+									<li.relative:Relative
+									<li.empty
+							guidelines ratio:
+							<input.in-guidelinesRatio(align=absmiddle,type=text,style="width:40px",value=1.00)
+
+						<div.legend.left
+							Legend:
+							<ul.items.dataset
+								<li.item.hos.hospitality.clickable.current
+									<span.color:&mdash;
+									<span.name:Hospitality expenses
+								<li.item.tra.travel.clickable.current
+									<span.color:&mdash;
+									<span.name:Travel expenses
+								<li.item.gd.guidelines.clickable
+									<span.color:&mdash;
+									<span.name:Guidelines
+						<ul.tags.clear
+							<li.clearer
+						<div.clearer
+# ----------------------------------------------------------------------------
+#
+# DATA & VISUALIZATION SETTINGS
+#
+# ----------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
+#
+# DATA & VISUALIZATION DESCRIPTION
+#
+# ----------------------------------------------------------------------------
+				<div.About.section.hidden
+					<div.header
+						<div.title
+							<h2:About the data
+					<div.body
+						Lorem ipsum dolor sit amet
+		%include applets/Footer
+# ----------------------------------------------------------------------------
+#
+# DIALOGS
+#
+# ----------------------------------------------------------------------------
+		<div#Dialogs.hidden
+			<div.w-shade
+# ----------------------------------------------------------------------------
+#
+# TEMPLATES
+#
+# ----------------------------------------------------------------------------
+		<div#Templates.hidden
+			<div.ExpenseTagTooltip
+				<div.title
+					<img(src=/lib/images/icon-calendar-16x16.png,align=absmiddle)
+					<span.label:Details for month
+					<span.month.value
+						<span.out:MONTH
+				<div.when-data
+					<table(width=100%)
+						<tr.expenses
+							<th:Expenses
+							<td.value
+								<span.out:
+						<tr.hospitality.sub
+							<th:Hospitality
+							<td.value
+								<span.out:
+						<tr.travel.sub
+							<th:Travel
+							<td.value
+								<span.out:
+						<tr.with-separator
+							<td(colspan=2)
+						<tr.guidelines
+							<th:Guidelines
+							<td.value
+								<span.out:
+						<tr.delta
+							<th:Delta
+							<td.value
+								<span.out:
+				<div.when-no_data
+					No data available
+			<li.ExpenseTag.w-element
+				<div.decorations
+					<div.w-tip-lm
+				<div.body.pos-rel
+					<div.cursor.hidden
+					<canvas(width=150,height=150)
+				<div.header
+					<div.tag.left
+						<span.out-total:[N]$
+					<div.variation.right
+						<span.out:[N]%
+					<div.clearer
+				<div.footer
+					<div.origin
+						<div.out:[DEPARTMENT]
+					<div.more
+						<input.do-showMore(type=button,value=Show more...)
+			<div.ExpenseTagDetails.details
+				<div.body
+					<div.departmentInfo
+						<div.right.maingraph
+							<canvas
+						<table
+							<tbody
+								<tr.size
+									<th:Size
+									<td.value.out:[SIZE]
+								<tr.expenses
+									<th:Expenses
+									<td.value.out:AMOUNT
+								<tr.guidelines
+									<th:Guidelines
+									<td.value.out:AMOUNT
+								<tr.variance
+									<th:Deviation
+									<td.value.out:AMOUNT
+						<div.clearer
+					<div.details
+						<table(width=100%,cellspacing=0,cellpadding=0)
+							<thead
+								<tr
+									<th.name.w-200:<span.label:Position>
+									<th.expenses.align-right:
+										<span.label:Expenses
+										<span.unit:(K$)
+									<th.guidelines.align-right:
+										<span.label:Guidelines
+										<span.unit:(K$)
+									<th.variance
+										<span.label:&Delta;
+										<span.unit:(+/-%)
+									<th.positiongraph:<span.label:Expenses and guidlines over period>
+							<tbody
+								<tr.template.hidden
+									<td.name
+										<span.out:NAME>
+									<td.expenses:
+										<span.out:AMOUNT>
+									<td.guidelines
+										<span.out:AMOUNT>
+									<td.variance:
+										<span.out:AMOUNT>
+									<td.positiongraph
+										<canvas(height=25px)
+					<div.information
+						The above table represents the detail for the department
+						expenses, on a per-position. The sum of all the
+						individual position expenses is equal to the whole
+						department expenses.
+#EOF
