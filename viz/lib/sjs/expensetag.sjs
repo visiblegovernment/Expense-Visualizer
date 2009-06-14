@@ -390,6 +390,8 @@
 		var hy = height
 		var tpy = Undefined
 		var hpy = Undefined
+
+		# This is the main rendering loop
 		for i in range_mon
 			var px  = x
 			var py  = y
@@ -403,7 +405,7 @@
 				var expenses     = Undefined
 				var expenses_hos = Undefined
 				var expenses_tra = Undefined
-				var guidelines    = Undefined
+				var guidelines   = Undefined
 				if isList(parameters positions)
 					for p in parameters positions
 						var dp = d[p]
@@ -411,8 +413,8 @@
 							if expenses is Undefined
 								expenses_hos = dp hos
 								expenses_tra = dp tra
-								expenses  = retrieveExpenses  (dp)
-								guidelines = retrieveGuidelines (dp)
+								expenses     = retrieveExpenses  (dp)
+								guidelines   = retrieveGuidelines (dp)
 							else
 								expenses_hos += dp hos
 								expenses_tra += dp tra
@@ -450,9 +452,9 @@
 						# FIXME: Should be
 						# if y < gy
 						if y > gy
-							ctx fillStyle = "#10ff10a0"
+							ctx fillStyle = "#10ff10"
 						else
-							ctx fillStyle = "#ff1010a0"
+							ctx fillStyle = "#ff1010"
 						end
 					end
 
@@ -469,7 +471,7 @@
 					end
 
 					# We draw the expenses line
-					if False
+					if True
 						ctx beginPath ()
 						ctx moveTo (x, y)
 						ctx lineTo (x + element_step, y)
@@ -509,7 +511,6 @@
 						ctx strokeStyle = TRAVEL_COLOR
 						ctx stroke ()
 						tpy = ty
-					end
 					end
 
 					#We draw guidelines information
