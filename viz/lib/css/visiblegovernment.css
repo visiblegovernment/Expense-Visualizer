@@ -191,14 +191,14 @@ a:hover {
 .Selector .details .choices li:hover {
 	border-top: 1px solid #36D7FF;
 	border-bottom: 1px solid #36D7FF;
-	background: #36D7FF;
-	color: white;
 	opacity: 1.0;
 }
 
 .Selector .details .choices li:hover.selected {
 	border-top: 1px dotted #36D7FF;
 	border-bottom: 1px dotted #36D7FF;
+	background: #36D7FF;
+	color: white;
 }
 
 .Selector .summary .value {
@@ -667,4 +667,8 @@ a:hover {
 
 .settings ul li.label {
 	color: #A0A0A0;
+}
+
+.dataset li.guidelines.current .name {
+	background: #69FF69;
 }

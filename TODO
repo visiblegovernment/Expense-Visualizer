@@ -1,0 +1,4 @@
+- Add url-based parameter serialization
+- Add an "embedded" mode that gets rid of all the interface and only has the visualization
+- Add a "hide no data" button
+- Add a "numerical guideline" (that can be used as absolute)
