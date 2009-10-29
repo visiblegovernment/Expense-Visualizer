@@ -53,6 +53,8 @@
 	]
 
 	@property data
+	@property metrics
+
 	@property retrieveExpenses
 	@property retrieveGuidelines
 
@@ -87,7 +89,8 @@
 	@end
 
 	@method getMetrics data
-	| Returns an object with various metrics on the data displayed by this visualization.
+	| Returns an object with various metrics on the data displayed by this visualization. This
+	| is called by 'getDatasetMetrics' which is called by 'updateTagsRendering'
 		var start_mon    = (parameters start year - 2003) * 12 + parameters start month
 		var end_mon      = (parameters end year   - 2003) * 12 + parameters end month
 		var range_mon    = (start_mon)..(end_mon)
@@ -121,10 +124,13 @@
 				}
 			end
 		end
+		self metrics = metrics
 		return metrics
 	@end
 
-	@method renderGrid data, cache
+	@method renderGrid data
+	| Renders the background grid, with the months as vertical lines with the given data
+	| as parameter
 		var width        = parseInt ($(uis canvas) attr "width")
 		var height       = parseInt ($(uis canvas) attr "height")
 		var start_mon    = (parameters start year - 2003) * 12 + parameters start month
@@ -262,23 +268,30 @@
 		}
 		retrieveGuidelines = {d|
 			var total = 0
+			# This retrieved traver and/or hospitality guildelines
 			if parameters travel      -> total += d tra_gd * (parameters guidelinesRatio)
 			if parameters hospitality -> total += d hos_gd * (parameters guidelinesRatio)
 			return total
 		}
 		if  parameters relative
+			# Here we display the visualization in RELATIVE mode, meaning that
+			# the highest value for the department visualization will reach the top of the
+			# visualization
 			var max_total = 0
 			if  parameters cumulative 
+				# In cumulative mode, the maximum value is the total for the selected region which is
+				# in the 'metrics' data
 				if parameters guidelines
-					max_total = Math max (retrieveExpenses(parameters total), retrieveGuidelines(parameters total))
+					max_total = Math max (retrieveExpenses(metrics total), retrieveGuidelines(metrics total))
 				else
-					max_total = retrieveExpenses(parameters total)
+					max_total = retrieveExpenses(metrics total)
 				end
 			else
+				# In non cumulative, it's simply the maximum month we got from the metrics
 				if parameters guidelines
-					max_total = Math max (retrieveExpenses(parameters maxMonth), retrieveGuidelines(parameters maxMonth))
+					max_total = Math max (retrieveExpenses(metrics pmaxMonth), retrieveGuidelines(metrics maxMonth))
 				else
-					max_total = retrieveExpenses(parameters maxMonth)
+					max_total = retrieveExpenses(metrics maxMonth)
 				end
 			end
 			normalize_y  = {y|
@@ -286,6 +299,9 @@
 				return ((height - 2) * (y / max_total))
 			}
 		else
+			# Here we display the visualisation in ABSOLUTE mode, meaning that the highest value is
+			# the highest for ALL the departements. The data is passed as a parameter by the
+			# page
 			var maxima = Undefined
 			if parameters cumulative
 				maxima = parameters globalMaxTotal
@@ -295,7 +311,6 @@
 			assert (maxima)
 			var maximum = retrieveExpenses (maxima)
 			if parameters guidelines -> maximum = Math max (maximum, retrieveGuidelines (maxima))
-
 			normalize_y  = {y|
 				return ((height - 2) * (y / maximum))
 			}
@@ -303,7 +318,7 @@
 		ctx fillStyle = "#c6e1ea"
 		ctx fillRect (0,0,width,height)
 		# We draw the grid
-		renderGrid (data,    {normalizeY:normalize_y})
+		renderGrid    (data)
 		renderSurface (data, {normalizeY:normalize_y})
 
 		var HOSPITALITY_COLOR = "#eddc22"
@@ -553,8 +568,9 @@
 				end
 			}
 			filterByDepartment (to_show)
-			# FIXME: I don't know why I need a + 2 here
-			if checked length == DEPARTMENTS length + 2
+			# FIXME: This is hardcoded, but we do have 25 departments, even if the DEPARTMENTS
+			# data as 42 entries
+			if checked length == 25
 				$ (".departments .value", ui) html "all"
 			else
 				$ (".departments .value", ui) html ("" + checked length)
@@ -589,43 +605,7 @@
 			updateTagsRendering {positions:positions}
 		}
 	}
-	$ ".PeriodSelector" :: {ui|
-		ui = $(ui)
-		var start_value = $ (".startDate .value", ui)
-		var end_value   = $ (".endDate .value",   ui)
-		$ (".do-save",   ui) click {
-			var start = start_value val () split "/"
-			var end   = end_value   val () split "/"
-			updateTagsRendering {
-				start:{year:parseInt(start[1]),month:parseInt(start[0])}
-				end:{year:parseInt(end[1]),month:parseInt(end[0])}
-			}
 
-		}
-		$ (".ctl-date",  ui) slider {
-			min: 0
-			max: (2008 - 2003) * 12 + 12
-			values: [0, (2008 - 2003) * 12 + 12]
-			value: (2008 - 2003) * 12
-			step: 1
-			range: true
-			slide: {e,ui|
-				var params = {
-					start:{
-						year:  2003 + parseInt(ui values [0] / 12)
-						month: (ui values [0] % 12)
-					}
-					end:{
-						year:  2003 + parseInt(ui values [1] / 12)
-						month: (ui values [1] % 12)
-					}
-				}
-				start_value val (sprintf("%d/%d", params start month + 1, params start year))
-				end_value   val (sprintf("%d/%d", params end month + 1,   params end year))
-				updateTagsRendering 'params
-			}
-		}
-	}
 	$ ".w-dialog" :: {d|
 		$ (".do-close", d) click {
 			$ "#Dialogs" addClass "hidden"
@@ -750,7 +730,7 @@
 			sub_viz parameters positions      = [id]
 			if True
 				sub_viz parameters updater   = {ui,s,g|
-					$ (".expenses  .out", ui) html (sprintf ("%d", s))
+					$ (".expenses  .out", ui)  html (sprintf ("%d", s))
 					$ (".guidelines .out", ui) html (sprintf ("%d", g))
 					var vari = (s/g) * 100
 					if vari > 0
@@ -784,6 +764,8 @@
 		parameters :: {v,k|viz parameters[k] = v}
 	end
 	# We get the updated metrics data
+	# FIXME: Metrics should be handled by the visualizations, it's stupid to have
+	# to reset them in the parameters
 	var metrics = getDatasetMetrics ( tags )
 	# We re-render the tags
 	for v in tags
@@ -854,6 +836,7 @@
 @end
 
 @function setMode1 mode
+| Switches between 'cumulative' and 'per month'
 	$ ".mode-1 .current" removeClass "current"
 	if mode == "cumulative"
 		$ ".mode-1 .cumulative" addClass "current"
@@ -865,6 +848,7 @@
 @end
 
 @function setMode2 mode
+| Switches between 'absolute' and 'relative'
 	$ ".mode-2 .current" removeClass "current"
 	if mode == "absolute"
 		$ ".mode-2 .absolute" addClass "current"
@@ -928,7 +912,7 @@ $(document) ready {
 
 			var updater   = {ui,total_expenses,total_guidelines|
 				var deviation    = total_expenses / total_guidelines * 100
-				$(".out-total",   ui) html (sprintf("%2.2fK$", total_expenses / 1000))
+				$(".out-total",   ui) html (sprintf("%0.3fM$", total_expenses / 1000000.0))
 				if deviation >= 100
 					$(".variation .out", ui) html ( sprintf ("+%d%%", deviation - 100))
 					$(".variation",      ui) addClass "positive" removeClass "negative"
@@ -969,7 +953,6 @@ $(document) ready {
 				deviation:  deviation
 				viz      :  viz
 			}
-
 			updateTagsRendering {}
 		end
 	end

@@ -15,92 +15,6 @@
 					<h1:VisibleGovernment<span.hi:.ca>
 					<h2:Canadian Federal Government Travel and Hospitality Expenses
 			<div.body
-				<div.Info.section.w-applet.hidden
-					<div.w-cards
-						<div.header
-							<div.w-tabs
-								<ul
-									<li
-										<span.do-selectCard.current(card=1):About
-									<li
-										<span.do-selectCard(card=2):Options
-								<div.clearer
-						<div.body
-							<div.about.w-card.current.N1
-								<div.header
-									About this visualization
-								<div.body
-									HELLO
-								<div.footer
-									<input.do-nextCard(type=button,value="Options")
-							<div.options.w-card.N2
-								<div.header
-									Visualization configuration
-								<div.body
-									HELLO
-#
-# ----------------------------------------------------------------------------
-#
-# VISUALIZATION PARAMETERS
-#
-# ----------------------------------------------------------------------------
-				<div.Parameters.section.w-applet.hidden
-					<div.compacted.hidden
-						<input.do-showOptions(type=button,value="Show options »")
-					<div.expanded
-						<div.hidden
-							<input.do-hideOptions(type=button,value="Hide options »")
-						<div.span-66p
-							<div.header.hidden
-								<h3.title:Show expenses for
-							<div.body.w-form-h
-								<div.dataset.w-field.group
-									<label:Displayed data
-									<div.value.w-choices
-										<ul
-											<li.hospitality.current:Hospitality Expenses
-											<li.travel.current:Travel Expenses
-											<li.empty
-										<div.clearer
-								<div.find.group.w-field
-									<label:For departements
-									%include applets/DepartmentSelector
-								<div.positions.group.w-field
-									<label:For positions
-									%include applets/PositionSelector
-								<div.period.group.w-field
-									<label:For Period
-									%include applets/PeriodSelector
-								<div.separator.group
-						<div.span-33p
-							<div.body.w-form-h
-								<div.modes.w-field
-									<label:Display mode
-									<div.value.w-choices
-										<ul.mode-1
-											<li.cumulative.current:Cumulative
-											<li.month:Per month
-											<li.empty
-									<div.clearer
-								<div.modes.w-field
-									<label.invisible:Display mode
-									<div.value.w-choices
-										<ul.mode-2
-											<li.absolute.current:Absolute
-											<li.relative:Relative
-											<li.empty
-									<div.clearer
-								<div.clear
-								<div.w-field
-									<div.label
-										Guidelines ratio
-									<div.value
-										<input.in-guidelinesRatio(align=absmiddle,type=text,style="width:40px",value=1.00)
-										#<div.left
-										<div.ctl-guidelinesRatio(style="width:150px")
-						<div.clearer
-
-
 # ----------------------------------------------------------------------------
 #
 # MAIN VISUALIZATION
@@ -116,7 +30,7 @@
 										<li.name.current:by name
 										<li.expenses:by expense
 										<li.deviation:by deviation
-										<li.empty
+										<li.empty:
 							<div.left
 								<label:Filter by
 								%include applets/DepartmentSelector
