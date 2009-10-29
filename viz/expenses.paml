@@ -253,8 +253,6 @@
 				<div.footer
 					<div.origin
 						<div.out:[DEPARTMENT]
-					<div.more
-						<input.do-showMore(type=button,value=Show more...)
 			<div.ExpenseTagDetails.details
 				<div.body
 					<div.departmentInfo

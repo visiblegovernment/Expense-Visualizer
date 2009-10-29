@@ -5,7 +5,7 @@
 # License   : BSD License
 # -----------------------------------------------------------------------------
 # Creation  : 07-Dec-2008
-# Last mod  : 14-Jun-2009
+# Last mod  : 29-Oct-2009
 # -----------------------------------------------------------------------------
 
 @module expensetag
@@ -83,81 +83,7 @@
 		super bindUI ()
 		uis cursor  = $ (".cursor", ui)
 		uis canvas  = $ ("canvas", ui) [0]
-		uis qtip    = $ (uis canvas) qtip {
-			content: 'This is an active list element'
-			position: {
-				target:"mouse"
-				corner:{tooltip:"bottomMiddle"}
-			}
-			show: 'mouseover'
-			hide: 'mouseout'
-			content : {text:($ "#Templates .ExpenseTagTooltip" clone ())}
-		} qtip "api"
-		uis qtip onPositionUpdate = {e|updateToolTip (target, arguments)}
-		uis qtip onHide           = {uis cursor addClass "hidden"}
 		ctx = uis canvas getContext "2d"
-	@end
-
-	@method updateToolTip
-		var pos = uis qtip getPos ()
-		var w   = parseInt ($ (uis qtip elements tooltip) css "width")
-		var ref = $ (uis canvas) offset ()
-		pos left = pos left - ref left + w /2
-		pos top  = ref top
-		if pos left >= 0
-			var width        = parseInt ($(uis canvas) attr "width")
-			var height       = parseInt ($(uis canvas) attr "height")
-			var start_mon    = (parameters start year - 2003) * 12 + parameters start month
-			var end_mon      = (parameters end year   - 2003) * 12 + parameters end month
-			var range_mon    = (start_mon)..(end_mon)
-			var x            = 0
-			var x_step       = width / range_mon length
-			var month_offset = parseInt (pos left / x_step)
-			var m            = start_mon + month_offset
-			var year         = parameters start year + m / 12
-			var month        = m % 12 + 1
-			if False
-				uis cursor css {
-					left: (m*x_step)
-					top:   0
-					width: x_step
-					height:height
-				}
-				uis cursor removeClass "hidden"
-			end
-			if uis qtip lastMonth != m
-				var d            = data mon [m]
-				var c            = uis qtip elements content
-				$ ( ".month .out", c ) html (sprintf("%02d/%04d", month, year))
-				if d is Undefined
-					$ (".when-data",    c)  addClass "hidden"
-					$ (".when-no_data", c)  removeClass "hidden"
-					c addClass "nodata"
-				else
-					$ (".when-data", c)    removeClass "hidden"
-					$ (".when-no_data", c) addClass    "hidden"
-					c removeClass "nodata"
-					var expenses  = retrieveExpenses (d)
-					var guidelines = retrieveGuidelines (d)
-					var delta      = expenses / guidelines
-					if delta > 1.0
-						delta = sprintf ("+%d%%", (delta * 100) - 100 )
-						$ ( ".delta .out", c ) removeClass "negative"
-						$ ( ".delta .out", c ) addClass    "positive"
-					else
-						delta = sprintf ("%d%%", (delta * 100) - 100 )
-						$ ( ".delta .out", c ) addClass    "negative"
-						$ ( ".delta .out", c ) removeClass "positive"
-					end
-					$ ( ".hospitality  .out", c ) html ( sprintf ("%0.2f $", d hos) )
-					$ ( ".travel  .out", c ) html ( sprintf ("%0.2f $", d tra) )
-					$ ( ".expenses  .out", c ) html ( sprintf ("%0.2f $", expenses) )
-					$ ( ".guidelines .out", c ) html ( sprintf ("%0.2f $", guidelines) )
-					$ ( ".delta .out", c )      html ( delta )
-				end
-				uis qtip lastMonth = m
-			end
-		end
 	@end
 
 	@method getMetrics data
@@ -985,7 +911,7 @@ $(document) ready {
 	var last_department = 0
 	# STEP 2 - We create widgets for each department in the EXPENSES dataset
 	for department, i in EXPENSES
-		if i <= 2
+		if i >= 0
 			# We build indicators
 			#console log (department name)
 			var name             = department name
@@ -1025,6 +951,7 @@ $(document) ready {
 			# We create the visualization, and attach it to the view
 			var viz                        = new ExpenseTag (new_view)
 			viz parameters maxMonth        = department max_month
+			# FIXME: Don't know if the total is OK
 			viz parameters total           = department total
 			viz parameters globalMaxTotal  = maxima_total
 			viz parameters globalMaxMonth  = maxima_month

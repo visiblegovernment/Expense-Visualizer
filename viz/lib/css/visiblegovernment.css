@@ -403,24 +403,6 @@ a:hover {
 	vertical-align: middle;
 }
 
-.ExpenseTag .footer .more {
-	display: none;
-	position: absolute;
-	left: -1px;
-	right: -1px;
-	bottom: -1px;
-	padding-top: 9px;
-	padding-bottom: 9px;
-	background: #E0E0E0;
-	font-weight: normal;
-	text-align: center;
-	z-index: 200;
-}
-
-*:hover.ExpenseTag .footer .more {
-	display: block;
-}
-
 .ExpenseTagTooltip {
 	min-width: 200px;
 	background: #FFFFA0;

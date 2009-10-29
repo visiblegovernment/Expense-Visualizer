@@ -15,6 +15,7 @@ info:
 	@echo "data      - runs the 'collect.py' script to process the data"
 	@echo "vizdata   - copies the processed data to the viz directory"
 	@echo
+	@echo "To run the visualization, 'cd viz ; pamela-web' (you need Pamela)"
 
 createdb:
 	echo "create database $(MYSQL_DB) ; grant all privileges on $(MYSQL_DB).* to '$(MYSQL_USER)'@'$(HOSTNAME)';" | mysql -uroot -p ; true
